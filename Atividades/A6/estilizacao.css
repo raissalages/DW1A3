@@ -11,6 +11,26 @@
   font-family: 'Poppins', sans-serif;
 }
 
+input[type="checkbox"]
+{
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  right: 100px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"]:before
+{
+  content: 'Dark';
+}
+
+input[type="checkbox"]:checked ˜ *
+{
+  filter: invert(1);
+}
+
 section
 {
   position: absolute;

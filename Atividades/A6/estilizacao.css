@@ -4,7 +4,7 @@
 
 *
 {
-  msrgin: 0;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
@@ -13,5 +13,10 @@
 
 main
 {
-  
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  min-height: 100vh;
+  padding: 80px 100px;
 }

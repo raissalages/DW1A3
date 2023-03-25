@@ -1,1 +1,17 @@
-@import url()
+@import url('https://fonts.googleapis.com/css?family=Poppins: 400, 500, 600, 700, 800,900&display=swap');
+
+
+
+*
+{
+  msrgin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+main
+{
+  
+}

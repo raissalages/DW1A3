@@ -24,9 +24,18 @@ input[type="checkbox"]
 input[type="checkbox"]:before
 {
   content: 'Dark';
+  position: absolute;
+  content: 'Dark';
   color: #fff;
   background: #000;
   padding: 10px 20px;
+}
+
+input[type="checkbox"]:checked:before
+{
+  content: 'light';
+  color: #000;
+  background: #fff;
 }
 
 input[type="checkbox"]:checked ˜ *

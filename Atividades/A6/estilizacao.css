@@ -38,7 +38,7 @@ input[type="checkbox"]:checked:before
   background: #fff;
 }
 
-input[type="checkbox"]:checked ˜ *
+input[type="checkbox"]:checked ~ *
 {
   filter: invert(1);
 }

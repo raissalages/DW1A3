@@ -33,7 +33,7 @@ input[type="checkbox"]:before
 
 input[type="checkbox"]:checked:before
 {
-  content: 'light';
+  content: 'Light';
   color: #000;
   background: #fff;
 }

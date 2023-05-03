@@ -33,23 +33,18 @@
             <h2>Balanços</h2>
             <div class="card">
                 <h3>Entradas</h3>
-                <p id="income">R$5000,00</p>
+                <p id="income">R$0,00</p>
             </div>
 
             <div class="card">
                 <h3>Saídas</h3>
-                <p id="expense">R$3000,00</p>
+                <p id="expense">R$0,00</p>
             </div>
 
             <div class="card">
                 <h3>Total</h3>
-                <p id="total">R$2000,00</p>
+                <p id="total">R$0,00</p>
             </div>
-
-
-
-
-
         </section>
 
         <section id="transactions">
@@ -65,24 +60,14 @@
                         <th>Valor</th>
                         <th>Data</th>
                         <th>Categoria</th>
+                        <th></th>
+
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Luz</td>
-                        <td>R$230,00</td>
-                        <td>02/03/2023</td>
-                        <td>Contas fixas</td>
-                    </tr>
-
-                    <tr>
-                        <td>Calça</td>
-                        <td>R$89,90</td>
-                        <td>09/03/2023</td>
-                        <td>Roupas</td>
-                    </tr>
                 </tbody>
+                
             </table>
         </section>
 
@@ -96,7 +81,7 @@
                     <div class="input-group">
                         <label class="sr-only" for="description"></label>
                         <input type="text" id="description" name="description" placeholder="Descrição" />
-
+                        
                     </div>
 
                     <div class="input-group">
@@ -131,17 +116,7 @@
         <p>Simplify</p>
     </footer>
 
-    <script>
-        const Modal = {
-            open(){
-                document.querySelector('.modal-overlay').classList.add('active')
-            },
-            close(){
-                document.querySelector('.modal-overlay').classList.remove('active')
-
-            }
-        }
-    </script>
+    <script src="./scripts.js"></script>
 </body>
 
 </html>

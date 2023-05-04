@@ -1,16 +1,12 @@
 const Modal = {
     open(){
-        // Abrir modal
-        // Adicionar a class active ao modal
-        document
-            .querySelector('.modal-overlay')
+        
+        document.querySelector('.modal-overlay')
             .classList
             .add('active')
 
     },
     close(){
-        // fechar o modal
-        // remover a class active do modal
         document
             .querySelector('.modal-overlay')
             .classList
@@ -90,7 +86,7 @@ const DOM = {
         <td class="date">${transaction.date}</td>
         <td class="category">${transaction.category}</td>
         <td>
-            <img onclick="Transaction.remove(${index})" src="./bin.png" alt="Remover transação">
+            <img onclick="Transaction.remove(${index})" src="bin.png" alt="Remover transação">
         </td>
         `
 

@@ -186,11 +186,11 @@ td img{
 }
 
 td.income {
-    color: #12a454;
+    color: rgb(132, 154, 99);
 }
 
 td.expense {
-    color: #e92929;
+    color: #BD5151;
 }
 
 #balance {
@@ -198,10 +198,11 @@ td.expense {
     color: white;
 }
 
-#transactions {
+#transaction {
     margin-top: 3rem;
     display: block;
     overflow-x: auto;
+    width: 100%;
 }
 
 

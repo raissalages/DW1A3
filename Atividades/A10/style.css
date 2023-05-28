@@ -1,0 +1,13 @@
+body{
+    padding: 4rem;
+    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+  
+}
+.invalid {
+  border: 2px solid red;
+}
+.valid {
+  border: 2px solid green;
+}

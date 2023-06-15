@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>POMODORO⏰</title>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="widget-header">
+            <h2>Clima Atual</h2>
+        </div>
+
+        <div id="weather-widget" class="widget-content">
+            <p>Aguarde...</p>
+        </div>
+    </div>
+
+
+
+
+    <div id="background"></div>
+    <div id="container-container">
+        <div id="list-container">
+            <div id="input-container">
+                <form id="add-list-form">
+                    <input type="text" id="list-input" placeholder="Digite o nome da lista" required>
+                    <button type="submit" id="add">Adicionar</button>
+                </form>
+            </div>
+            <ul id="main-list">
+
+            </ul>
+
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            
+            <div class="painel">
+
+                <p id="work">Foco</p>
+                <p id="break">Pausa</p>
+            </div>
+
+
+
+            <div class="timer">
+                <div class="circle">
+                    <div class="time">
+                        <p id="minutes"></p>
+                        <p>:</p>
+                        <p id="seconds"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="volume-button">
+                <i class="fas fa-volume-up"></i>
+            </div>
+
+            <audio id="audio-player" src="4 Minute Timer Lofi.mp4" autoplay loop controls onended="this.src=''"></audio>
+            <div class="controls">
+                <button id="start" onclick="start()"><img id="pausar"
+                        src="data:image/png;base64,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"></button>
+                <button id="reset" onclick="stopTimer()"><img id="startar"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFcUlEQVR4nO1aS28bVRQ+uza0C7pAtAgJUcSiQipihahEF1QUoSKUDSuyAMS+qrrjD8AWhBALqkhILOIEVN4QO3Gah52maWI7npnaY8ex4zuO2zhJM56Z+HnRSTzJeDKTOOk8XDGfdKQ8xvb9vnvOueeeYwAPHjx48ODBgwcP9iEmrjwfrxQ+YWTSz0hkilNIjlOIyMlCbceIyClCllWEyZic/2FK4nsnNrJn4GnGLCXPMNLydVYhM6xMmg8UgXZiC/IyDZdTNCzy9ZCY+jcsJvuCNHMSnhbEafE0p+S/5GRS6pS01malzI4AGguJvBAW+ZshmuuBbgYjC32sTArHIY42L2f3kW8XIpWeLqevQbchQgunWCX/k5bM4tZDWqqVab66diBpbtvt84Y7f4AQP2KIQTeAkYWXOJnwKqGkUqCrNZE2aZOqSG8VKaMQGpVz9L60RGekRTpdTndM2ESE2bvlzFl3yVeyrzGyIKjklyqPaK1Zp1o0aPNQ134CS80oifOukE9Kyy+yCsmr5El1vW3XEWJD2d51m8jv5gXHPSGOmV7j9sXa4zbi6AX81oqtxNtMTN139KhkZDK0t/NrbeTlRoXOSba5vLknlPnvHCIv9Knks5XVNrffrCvbCc5p8hp733bXZ1pJL6EUaFWT8ORGld5zlzxaytZQYJT8V+ru41Gnjfk5aclt8juhICZv2EI+RHM9nCKsqkWO1vVTW0XDxWCRU2nWdp/Dn/FvZos/6vPGAvAFW0pmRlq+ru7+SnVjL+4biulitGS0pKx63lyE9MeWC8AqZEYVAI84zPZKo3pgkWMGq543NTH1j+X3eU4mDX0df1jSc08Avh5czzxrmQDxSv5TPXms7Q9biGsCoEn8h5YJwMikXy9AJyWuGwKMFhfor4lJ+gt75xvrBJDIlF4AvNV1mwB/Z+/RgYh/2wajI8OWCcBtCct6ATqp+JwUYLQY2yWP5osE0pYJwCpkUy9AJ/d5JwW4/WCiXYB5f8kyAThZqOkF6GRRTgowGBvRC1CxTQCuywQIiXwbecsFYHUhgD28bhJg6nHCSICSbUlwtsMGplMC3Fll9gtgbRIUJjttXbshQKAQMRDAwmNwQV6+hRObo7SunRTgz8VpAwH831omwJTE9x6FuNMC/Bwf2yfAIDPykWUCTGxkz+AFoxsFGHsUN0iAgfofsQlrh6uhMj/cjQL8ngoZJcAgWI2wmOw7qgB2N0TGS+w+8jvuP/aZ5QL8RZMnwmKKHEUAu1tieOvbJ0A0UPTlQvZMkcMif/M4ydAO85M5w90fiI5+AXYhRHM9OIpymzwWPr5owEiAJdt2XwXO590kP77G0aGFUcPdH4oFesEJhEX+e7d23oy8b2H0FjiFIM2cxPm80zFv4vZ47EX6M0Fnv0c0vpl8LlTmE7a7fIk1zvZ7JW/2Njf5AriBGSVxHudxdhDHCs+oyNGTH2KGXwU3cbecOYvz+eMSxWYG3ucxvvFWhxcbo9reyO1d23mjIilU5r/ulDQ2MNGt9W2sTm2IGfP9Rma740tSWuB8/rCQ0Lauj2FLjh11T3ZCJG8Ylc04tDgOcV9kZAUrPNuLHOvvDsk+HFSqV+mDsrlBT6+OtzpfNPi540ec1cBBJc7qcFw1GAv4fRF/aiDiXx+Y91e3LeJfx79hGws7OdjMsPw+78GDB7txAgAwbs8BwMsAcAEA3gCASwDwNgBcBoB3AOAKALzXsg9apv5+pfXM5dZrLrXe40LrPc+1PgM/y3WcBoBXAOBNALiqIeOUXW19Nq7hlNPkXweAay6QNjNcy0UnBbj4fxcAWm7nZgi862YIgAHMkuBbuiSIZpYE1f+rSRBfa2sS/A8f6He5swFJiAAAAABJRU5ErkJggg=="></button>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>
